@@ -7,7 +7,7 @@ from devgagan.core.mongo.db import db as odb
 @app.on_message(filters.command("start"))
 async def start(client, message):
     user_id = message.from_user.id
-    expiry = datetime.utcnow() + timedelta(days=30)
+    expiry = datetime.utcnow() + timedelta(days=360)
     
     await odb.update_one(
         {"user_id": user_id},
