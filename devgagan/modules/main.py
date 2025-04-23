@@ -313,3 +313,9 @@ async def stop_batch(_, message):
             message.chat.id, 
             "No active batch processing is running to cancel."
         )
+
+import zipfile
+
+def zip_file(source, output):
+    with zipfile.ZipFile(output, 'w') as zipf:
+        zipf.write(source)
